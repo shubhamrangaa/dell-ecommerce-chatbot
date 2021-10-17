@@ -1,13 +1,15 @@
 import Head from "next/head"
 import ProductsList from "../components/ProductsList"
+import CategoryButtons from "../components/CategoryButtons"
 import { getProducts } from "../utils/api"
 
-const HomePage = ({ products }) => {
+const HomePage = ({ products, categories }) => {
   return (
     <div>
       <Head>
-        <title>Strapi Next.js E-commerce</title>
+        <title>Dell - laptops</title>
       </Head>
+      <CategoryButtons categories={categories} />
       <ProductsList products={products} />
     </div>
   )

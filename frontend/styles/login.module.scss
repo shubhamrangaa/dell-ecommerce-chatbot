@@ -1,0 +1,44 @@
+.emailInput {
+  padding: 1rem;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .formWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+
+    label {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      min-width: 350px;
+      transition: 0.1s ease-in;
+      &:focus {
+        outline: none;
+        background-color: rgb(248, 252, 255);
+      }
+    }
+
+    button {
+      margin: 1rem 0rem;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #7959ee;
+      border-radius: 0.25rem;
+      color: #f0edee;
+    }
+  }
+}
