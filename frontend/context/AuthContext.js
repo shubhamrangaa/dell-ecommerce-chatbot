@@ -31,12 +31,23 @@ export const AuthProvider = (props) => {
         console.log(email)
         await setUser({ email })
         console.log(user)
+        const token = await getToken()
+        console.log("checkUserLoggedIn:", token)
       }
     } catch (error) {
       console.log(error)
     }
   }
 
+  //
+  const getToken = async () => {
+    try {
+      const token = await magic.user.getIdToken()
+      return token
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const logoutUser = async () => {
     try {
       await magic.user.logout()
@@ -52,7 +63,7 @@ export const AuthProvider = (props) => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
+    <AuthContext.Provider value={{ user, loginUser, logoutUser, getToken }}>
       {props.children}
     </AuthContext.Provider>
   )
